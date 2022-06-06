@@ -1,0 +1,81 @@
+/* You can add global styles to this file, and also import other style files */
+.flip-container {
+    perspective: 400px;
+    /* border: 2px solid #1976d2; */
+    border-radius: 4px;
+    border: 1px solid #eee;
+    padding: 16px;
+
+  }
+  
+  /* flip the pane when flip css class programmatically added */
+  .flip-container.flip .flipper {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-container,
+  .front,
+  .back {
+    width: 250px;
+    height: 100px;
+
+  }
+  
+  /* flip speed goes here */
+  .flipper {
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+  }
+  
+  /* hide back of pane during swap */
+  .front,
+  .back {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 4px;
+
+  }
+  
+  /* front pane, placed above back */
+  .front {
+    z-index: 2;
+    /* for firefox 31 */
+    transform: rotateY(0deg);
+    background-color: #dd0031;
+  }
+  
+  /* back, initially hidden pane */
+  .back {
+    transform: rotateY(180deg);
+    background-color: #1976d2;
+  }
+
+
+  .card {
+    border-radius: 4px;
+    padding: 16px;
+    text-align: center;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center; */
+    color: white;
+
+  }
+
+  .card.card-small {
+    height: 16px;
+    width: 168px;
+  }
+
+  button{
+    margin-top: 16px;
+    border: 1px solid #eee;
+    background-color: #fafafa;
+    color: #1976d2;
+    height: 20px;
+    width: 100px;
+  }
